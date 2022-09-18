@@ -17,11 +17,12 @@ type Error = {
 	error: string;
 };
 export default (req: NextApiRequest, res: NextApiResponse<DiscordInteraction | Error>) => {
+	console.log(req.headers);
 	const signature = req.headers['X-Signature-Ed25519'] as string;
 	const timestamp = req.headers['X-Signature-Timestamp'] as string;
 	const body = JSON.stringify(req.body);
 
-	console.log(signature, timestamp, body, PUBLIC_KEY);
+	console.log(`${signature}\n${timestamp}\n${PUBLIC_KEY}`);
 
 	const isValidRequest = verifyKey(body, signature, timestamp, PUBLIC_KEY);
 
