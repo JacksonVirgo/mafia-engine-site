@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import Table, { Cell, ColumnHeader } from '@/components/Table';
 import { faker } from '@faker-js/faker';
 import { Alignments } from '@/utils/data';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import Alignment from '@/components/betrayal/Alignment';
 
 const tableHeaders: ColumnHeader[] = [
@@ -45,7 +45,6 @@ export default function RedirectionTest() {
 	const router = useRouter();
 	const { data, refetch, isLoading } = trpc.useQuery(['game.getGame']);
 	const session = useSession();
-
 	const tableData = useMemo(() => generateRandomRowData(100), [data]);
 
 	return (

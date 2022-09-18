@@ -9,14 +9,12 @@ import { useRouter } from 'next/router';
 const Home: NextPage = () => {
 	const session = useSession();
 	const router = useRouter();
-	const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
 
 	useEffect(() => {
 		if (router.isReady) {
 			if (session.status === 'authenticated') {
 				const { redir } = router.query;
 				if (redir) router.push(decodeURIComponent(redir as string));
-				else router.push('/betrayal/dashboard');
 			}
 		}
 	}, [router.isReady, session.status]);
@@ -24,10 +22,18 @@ const Home: NextPage = () => {
 	return (
 		<Center pageTitle="Mafia Engine">
 			<h1 className="text-3xl font-semibold">Mafia Engine</h1>
-			<div className="flex flex-col w-3/5 mt-4 text-center">
-				<DiscordLoginButton onClick={() => signIn('discord')} />
-				<div onClick={() => signOut()}>Log Out</div>
-			</div>
+			{session.status === 'authenticated' && (
+				<div>
+					<a href="/mafiascum">Mafia Scum</a>
+				</div>
+			)}
+
+			{session.status === 'unauthenticated' && (
+				<div className="flex flex-col w-3/5 mt-4 text-center">
+					<DiscordLoginButton onClick={() => signIn('discord')} />
+					<div onClick={() => signOut()}>Log Out</div>
+				</div>
+			)}
 		</Center>
 	);
 };
