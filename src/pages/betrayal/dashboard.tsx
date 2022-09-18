@@ -31,7 +31,7 @@ const tableHeaders: ColumnHeader[] = [
 ];
 
 const generateRandomRowData = (amount: number) => {
-	let rows: Cell[][] = [];
+	const rows: Cell[][] = [];
 	// for (let i = 0; i < amount; i++) {
 	// 	let playerIndex = i + 1;
 	// 	let player = faker.internet.userName();
