@@ -7,7 +7,7 @@ type DiscordInteraction = {
 	type: number;
 };
 export default (req: NextRequest) => {
-	let interactionResponse: DiscordInteraction = { type: 1 };
+	const interactionResponse: DiscordInteraction = { type: 1 };
 	return new Response(JSON.stringify(interactionResponse), {
 		status: 200,
 		headers: {
