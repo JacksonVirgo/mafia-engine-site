@@ -20,7 +20,7 @@ export default (req: NextApiRequest, res: NextApiResponse<DiscordInteraction | E
 	console.log('Body', req.body, '\n\nHeaders', req.headers);
 	const signature = req.headers['X-Signature-Ed25519'] as string;
 	const timestamp = req.headers['X-Signature-Timestamp'] as string;
-	const body: string = req.body;
+	const body = JSON.stringify(req.body);
 	const isValidRequest = verifyKey(body, signature, timestamp, PUBLIC_KEY);
 
 	if (!isValidRequest) return res.status(401).json({ error: 'Unauthorized' });
