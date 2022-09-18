@@ -5,9 +5,10 @@ export const config = {
 
 type DiscordInteraction = {
 	type: number;
+	data?: string;
 };
 export default (req: NextRequest) => {
-	const interactionResponse: DiscordInteraction = { type: 1 };
+	const interactionResponse: DiscordInteraction = { type: 1, data: 'PING' };
 	return new Response(JSON.stringify(interactionResponse), {
 		status: 200,
 		headers: {
