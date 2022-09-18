@@ -34,10 +34,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<DiscordInteracti
 	const { token, data, member } = body;
 
 	await axios.post(`https://discord.com/v10/interactions/${interactionID}/${token}/callback`, {
-		type: 4,
-		data: {
-			content: 'This is from a serverless application. Hoorah!',
-		},
+		type: 5,
 	});
 
 	// TEST DEFER
