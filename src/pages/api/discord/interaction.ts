@@ -3,7 +3,15 @@ export const config = {
 	runtime: 'experimental-edge',
 };
 
+type DiscordInteraction = {
+	type: number;
+};
 export default (req: NextRequest) => {
-	console.log(req);
-	return new Response('Hello, world!   '.trim());
+	let interactionResponse: DiscordInteraction = { type: 1 };
+	return new Response(JSON.stringify(interactionResponse), {
+		status: 200,
+		headers: {
+			'content-type': 'application/json',
+		},
+	});
 };
