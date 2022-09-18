@@ -5,4 +5,5 @@ export const config = {
 
 export default (req: NextRequest) => {
 	console.log(req);
+	return new Response('Hello, world!   '.trim());
 };
