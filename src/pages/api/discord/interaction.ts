@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifyKey } from 'discord-interactions';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const PUBLIC_KEY = '843514276383031296';
+const PUBLIC_KEY = '67bc59e4adb1d0ce097926d04244d7eff090b16277572a147f5e9a25d9684890';
 
 // export const config = {
 // 	runtime: 'experimental-edge',

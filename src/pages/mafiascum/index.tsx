@@ -7,7 +7,7 @@ export default function RedirectionTest() {
 	const router = useRouter();
 	const [ppp, setPPP] = useState(0);
 	const getPageData = trpc.useMutation('mafiascum.getPageData');
-
+	
 	const fetchnewData = async () => {
 		const newData = await getPageData.mutateAsync({ thread: '79377', ppp: 25 });
 	};
