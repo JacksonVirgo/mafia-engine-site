@@ -1,18 +1,18 @@
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { verifyKey } from 'discord-interactions';
 
 const PUBLIC_KEY = '843514276383031296';
 
-export const config = {
-	runtime: 'experimental-edge',
-};
+// export const config = {
+// 	runtime: 'experimental-edge',
+// };
 
 type DiscordInteraction = {
 	type: number;
 	data?: string;
 };
 export default (req: NextRequest) => {
-	console.log(req);
+	console.log(req.body, req.headers);
 	const signature = req.headers.get('X-Signature-Ed25519') as unknown as string;
 	const timestamp = req.headers.get('X-Signature-Timestamp') as unknown as string;
 	const body: string = req.body as unknown as string;
