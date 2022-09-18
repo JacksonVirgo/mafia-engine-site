@@ -12,6 +12,7 @@ type DiscordInteraction = {
 	data?: string;
 };
 export default (req: NextRequest) => {
+	console.log(req.body);
 	const signature = req.headers.get('X-Signature-Ed25519') as unknown as string;
 	const timestamp = req.headers.get('X-Signature-Timestamp') as unknown as string;
 	const body: string = req.body as unknown as string;
