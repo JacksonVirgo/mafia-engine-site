@@ -5,6 +5,7 @@ import { signIn, useSession, signOut } from 'next-auth/react';
 import { DiscordLoginButton } from 'react-social-login-buttons';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
 	const session = useSession();
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
 			<h1 className="text-3xl font-semibold">Mafia Engine</h1>
 			{session.status === 'authenticated' && (
 				<div>
-					<a href="/mafiascum">Mafia Scum</a>
+					<Link href="/mafiascum">Mafia Scum</Link>
 				</div>
 			)}
 

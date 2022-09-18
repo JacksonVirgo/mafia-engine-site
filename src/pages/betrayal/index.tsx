@@ -9,8 +9,6 @@ export default function RedirectionTest() {
 	const createGame = trpc.useMutation(['game.createGame']);
 	const deleteGame = trpc.useMutation(['game.deleteGame']);
 
-	useEffect(() => {}, [data]);
-
 	const [requestedTitle, setRequestedTitle] = useState<string>('');
 
 	return (
@@ -51,7 +49,7 @@ export default function RedirectionTest() {
 					<Button
 						label="Create Game"
 						onClick={async () => {
-							let result = await createGame.mutateAsync({
+							const result = await createGame.mutateAsync({
 								title: requestedTitle,
 							});
 

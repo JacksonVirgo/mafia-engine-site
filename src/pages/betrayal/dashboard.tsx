@@ -32,12 +32,12 @@ const tableHeaders: ColumnHeader[] = [
 
 const generateRandomRowData = (amount: number) => {
 	let rows: Cell[][] = [];
-	for (let i = 0; i < amount; i++) {
-		let playerIndex = i + 1;
-		let player = faker.internet.userName();
-		let alignment = Alignments[Math.floor(Math.random() * Alignments.length)];
-		rows.push([playerIndex, <input type="text" className="w-full h-full" defaultValue={player} spellCheck={false} />, <Alignment alignment={alignment} />, <input type="text" className="w-full h-full" defaultValue={'?'} spellCheck={false} />, <div className="w-full h-full" contentEditable spellCheck={false} />]);
-	}
+	// for (let i = 0; i < amount; i++) {
+	// 	let playerIndex = i + 1;
+	// 	let player = faker.internet.userName();
+	// 	let alignment = Alignments[Math.floor(Math.random() * Alignments.length)];
+	// 	rows.push([playerIndex, <input type="text" className="w-full h-full" defaultValue={player} spellCheck={false} />, <Alignment alignment={alignment} />, <input type="text" className="w-full h-full" defaultValue={'?'} spellCheck={false} />, <div className="w-full h-full" contentEditable spellCheck={false} />]);
+	// }
 	return rows;
 };
 

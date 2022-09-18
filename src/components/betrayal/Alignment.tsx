@@ -3,7 +3,7 @@ import { Alignment } from '@/utils/data';
 type AlignmentProps = {
 	alignment?: Alignment;
 };
-export default function ({ alignment }: AlignmentProps) {
+export default function Alignment({ alignment }: AlignmentProps) {
 	return (
 		<>
 			{!alignment && <div>?</div>}
