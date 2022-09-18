@@ -18,8 +18,8 @@ type Error = {
 };
 export default (req: NextApiRequest, res: NextApiResponse<DiscordInteraction | Error>) => {
 	console.log(req.headers);
-	const signature = req.headers['X-Signature-Ed25519'] as string;
-	const timestamp = req.headers['X-Signature-Timestamp'] as string;
+	const signature = req.headers['X-Signature-Ed25519'.toLowerCase()] as string;
+	const timestamp = req.headers['X-Signature-Timestamp'.toLowerCase()] as string;
 	const body = JSON.stringify(req.body);
 
 	console.log(`${signature}\n${timestamp}\n${PUBLIC_KEY}`);
