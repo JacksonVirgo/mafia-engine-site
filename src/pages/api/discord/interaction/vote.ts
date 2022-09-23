@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	const { application_id, token } = command;
 	const discordURI = `https://discord.com/api/v10/webhooks/${application_id}/${token}/messages/@original`;
 	const response = await axios.patch(discordURI, {
-		content: 'Response handled by Vercel.',
+		content: 'Vote command handled via seperate endpoint.',
 	});
 	return res.status(200).json(response);
 };
