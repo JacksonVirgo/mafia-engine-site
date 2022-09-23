@@ -11,6 +11,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 	console.log(body);
 
+	return res.status(200).json({});
+
 	// if (!command) return res.status(400).send('Invalid Body.');
 	// const { application_id, token } = command;
 	// const discordURI = `https://discord.com/api/v10/webhooks/${application_id}/${token}/messages/@original`;
