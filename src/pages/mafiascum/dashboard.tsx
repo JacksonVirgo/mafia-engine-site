@@ -2,10 +2,6 @@ import { trpc } from '@/utils/trpc';
 import { useRouter } from 'next/router';
 import BasePage from '@/components/pagetypes/Base';
 import { useSession } from 'next-auth/react';
-import Table, { Cell, ColumnHeader } from '@/components/Table';
-import { faker } from '@faker-js/faker';
-import { Alignments } from '@/utils/data';
-import { useEffect, useMemo } from 'react';
 
 export default function RedirectionTest() {
 	const router = useRouter();
