@@ -6,12 +6,7 @@ export default function CenterModal({ pageTitle, children, showIcon }: BasePage)
 	return (
 		<Base pageTitle={pageTitle}>
 			<main className="bg-polygon bg-no-repeat bg-center bg-fixed bg-cover flex flex-col justify-center items-center w-screen h-screen text-center">
-				<div className="bg-white w-centermodal h-centermodal rounded-md border-3 border-black flex flex-col justify-center items-center">
-					<div>
-						<Image src={GearLogo} width={150} height={110} />
-					</div>
-					{children}
-				</div>
+				<div className="bg-white dark:bg-zinc-800 w-centermodal h-centermodal rounded-md flex flex-col justify-center items-center  border-black border-2">{children}</div>
 			</main>
 		</Base>
 	);
