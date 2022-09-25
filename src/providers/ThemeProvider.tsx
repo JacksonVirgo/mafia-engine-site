@@ -3,7 +3,11 @@ import { useState, useContext, createContext, useEffect } from 'react';
 type Theme = 'dark' | 'light';
 type ThemeFunction = (theme: Theme) => any;
 
-const ThemeContext = createContext<[Theme, ThemeFunction]>(['light', () => {}]);
+const initialBlankFunc: ThemeFunction = (theme: Theme) => {
+	console.log(theme);
+};
+
+const ThemeContext = createContext<[Theme, ThemeFunction]>(['light', initialBlankFunc]);
 export const useTheme = () => useContext(ThemeContext);
 
 type ThemeProviderProps = {
