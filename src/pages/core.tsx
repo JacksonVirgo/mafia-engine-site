@@ -27,6 +27,7 @@ const Home: NextPage = () => {
 			</h1>
 			{session.status === 'authenticated' && (
 				<div className="w-full flex flex-col justify-center text-center">
+					<div className="dark:text-white">Site under development. Check back another time.</div>
 					<Link href="/core">
 						<div className="px-4 py-2 border border-black dark:border-white rounded-sm hover:cursor-pointer w-2/3 mx-auto mt-4 hover:underline hover:bg-gray-100 dark: dark:hover:bg-zinc-700 dark:text-white">Example Tool</div>
 					</Link>
@@ -41,7 +42,6 @@ const Home: NextPage = () => {
 			{session.status === 'unauthenticated' && (
 				<div className="flex flex-col w-3/5 mt-4 text-center">
 					<DiscordLoginButton onClick={() => signIn('discord')} />
-					<div onClick={() => signOut()}>Log Out</div>
 				</div>
 			)}
 		</Center>
